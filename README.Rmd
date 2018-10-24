@@ -1,0 +1,61 @@
+---
+output: github_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# timethis
+
+`timethis` is a simple package for modifying functions and expressions to return both the results and the execution time in a single list.
+
+## Installation
+
+You can install the released version of timethis from [CRAN](https://CRAN.R-project.org) with:
+
+```{r install-rel, eval = FALSE}
+install.packages("timethis")
+```
+
+Install the development version from GitHub with:
+
+```{r install-dev, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("mstrimas/timethis")
+```
+
+## Usage
+
+To time an expression or chunk of R code use `time_this()`. This will return a list with elements `result` and `time` containing the results of evaluating the code and the executuion time (calculated with `system.time()`), respectively.
+
+```{r time-this}
+library(timethis)
+
+# time a simple expression
+time_this(mean(rnorm(1e6)))
+
+# time a code chunk
+time_this({
+  x <- (1:1e6) / 1e6
+  y = 2 * x + 1 + rnorm(x)
+  lm(y ~ x)
+})
+```
+
+Use `add_timer()` to wrap an existing function so its execution is timed with `system.time()` and both the results of the funciton call and the execution time are returned as a list.
+
+```{r add-timer}
+mean_timed <- add_timer(mean)
+mean_timed(rnorm(1e6))
+
+lm_timed <- add_timer(lm)
+x <- (1:1e6) / 1e6
+y = 2 * x + 1 + rnorm(x)
+lm_timed(y ~ x)
+```
+
