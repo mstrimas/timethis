@@ -1,0 +1,12 @@
+Package: timethis
+Title: Modify function calls to capture execution time
+Version: 0.0.1
+Authors@R: 
+    person("Matthew", "Strimas-Mackey", email = "mstrimas@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0001-8929-7776"))
+Description: A simple package to modify existing funcitons so they will return 
+    their execution time along with their results.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/mstrimas/timethis
+BugReports: https://github.com/mstrimas/timethis/issues
