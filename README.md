@@ -1,6 +1,13 @@
 
 # timethis
 
+[![Travis build
+status](https://travis-ci.org/mstrimas/timethis.svg?branch=master)](https://travis-ci.org/mstrimas/timethis)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/mstrimas/timethis?branch=master&svg=true)](https://ci.appveyor.com/project/mstrimas/timethis)
+[![Coverage
+status](https://codecov.io/gh/mstrimas/timethis/branch/master/graph/badge.svg)](https://codecov.io/github/mstrimas/timethis?branch=master)
+
 `timethis` is a simple package for modifying functions and expressions
 to return both the results and the execution time in a single list.
 
@@ -33,11 +40,11 @@ library(timethis)
 # time a simple expression
 time_this(mean(rnorm(1e6)))
 #> $result
-#> [1] -0.001679024
+#> [1] -0.000110017
 #> 
 #> $time
 #>    user  system elapsed 
-#>   0.075   0.002   0.077
+#>   0.065   0.002   0.067
 
 # time a code chunk
 time_this({
@@ -52,12 +59,12 @@ time_this({
 #> 
 #> Coefficients:
 #> (Intercept)            x  
-#>      0.9964       2.0042  
+#>      0.9981       2.0017  
 #> 
 #> 
 #> $time
 #>    user  system elapsed 
-#>   0.286   0.057   0.345
+#>   0.247   0.037   0.285
 ```
 
 Use `add_timer()` to wrap an existing function so its execution is timed
@@ -68,11 +75,11 @@ execution time are returned as a list.
 mean_timed <- add_timer(mean)
 mean_timed(rnorm(1e6))
 #> $result
-#> [1] 0.001268237
+#> [1] -0.001177068
 #> 
 #> $time
 #>    user  system elapsed 
-#>   0.073   0.001   0.074
+#>   0.073   0.000   0.074
 
 lm_timed <- add_timer(lm)
 x <- (1:1e6) / 1e6
@@ -85,10 +92,10 @@ lm_timed(y ~ x)
 #> 
 #> Coefficients:
 #> (Intercept)            x  
-#>      0.9998       2.0032  
+#>       1.003        1.998  
 #> 
 #> 
 #> $time
 #>    user  system elapsed 
-#>   0.140   0.057   0.197
+#>   0.139   0.044   0.183
 ```

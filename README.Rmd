@@ -11,6 +11,10 @@ knitr::opts_chunk$set(
 )
 ```
 # timethis
+[![Travis build status](https://travis-ci.org/mstrimas/timethis.svg?branch=master)](https://travis-ci.org/mstrimas/timethis)
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/mstrimas/timethis?branch=master&svg=true)](https://ci.appveyor.com/project/mstrimas/timethis)
+[![Coverage status](https://codecov.io/gh/mstrimas/timethis/branch/master/graph/badge.svg)](https://codecov.io/github/mstrimas/timethis?branch=master)
+
 
 `timethis` is a simple package for modifying functions and expressions to return both the results and the execution time in a single list.
 

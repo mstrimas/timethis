@@ -4,14 +4,19 @@
 \alias{time_this}
 \title{Time an expression or code chunk}
 \usage{
-time_this(code)
+time_this(code, time_as = c("list", "attr"))
 }
 \arguments{
 \item{code}{An expression or code chunk (wrapped in curly brackets) to time.}
+
+\item{time_as}{character; return the execution time and results as list
+elements ("list") or return results with time as an attribute ("attr").}
 }
 \value{
 A list with elements `result` and `time`, containing the results of
-  evaluating `code` and the execution time, respectively.
+  evaluating `code` and the execution time, respectively. If `time_as =
+  "attr"`, the result will be returned directly with the time stored as an
+  attribute.
 }
 \description{
 Time an expression or chunk of R code with `system.time()` and return both
@@ -27,4 +32,7 @@ time_this({
   y = 2 * x + 1 + rnorm(x)
   lm(y ~ x)
 })
+
+# time can also be stored as an attribute
+time_this(mean(rnorm(1e6)), time_as = "attr")
 }

@@ -11,3 +11,6 @@ URL: https://github.com/mstrimas/timethis
 BugReports: https://github.com/mstrimas/timethis/issues
 RoxygenNote: 6.1.0
 License: MIT + file LICENSE
+Suggests: 
+    testthat,
+    covr

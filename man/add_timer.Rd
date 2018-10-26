@@ -4,14 +4,18 @@
 \alias{add_timer}
 \title{Wrap a function to add a timer}
 \usage{
-add_timer(.f)
+add_timer(.f, time_as = c("list", "attr"))
 }
 \arguments{
 \item{.f}{A function to modify to add a timer.}
+
+\item{time_as}{character; return the execution time and results as list
+elements ("list") or return results with time as an attribute ("attr").}
 }
 \value{
 Wrapped function that returns a list with components `result` and
-  `time`.
+  `time`. If `time_as = "attr"`, the result will be returned directly with
+  the time stored as an attribute.
 }
 \description{
 Modify a function so its execution is timed with `system.time()` and both
@@ -26,4 +30,8 @@ lm_timed <- add_timer(lm)
 x <- (1:1e6) / 1e6
 y = 2 * x + 1 + rnorm(x)
 lm_timed(y ~ x)
+
+# time can also be stored as an attribute
+mean_timed_a <- add_timer(mean, time_as = "attr")
+mean_timed_a(rnorm(1e6))
 }
