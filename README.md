@@ -1,6 +1,8 @@
 
 # timethis
 
+[![License: GPL
+v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
 [![Travis build
 status](https://travis-ci.org/mstrimas/timethis.svg?branch=master)](https://travis-ci.org/mstrimas/timethis)
 [![AppVeyor build
@@ -40,11 +42,11 @@ library(timethis)
 # time a simple expression
 time_this(mean(rnorm(1e6)))
 #> $result
-#> [1] -0.000110017
+#> [1] -0.0004478301
 #> 
 #> $time
 #>    user  system elapsed 
-#>   0.065   0.002   0.067
+#>   0.075   0.002   0.078
 
 # time a code chunk
 time_this({
@@ -59,12 +61,12 @@ time_this({
 #> 
 #> Coefficients:
 #> (Intercept)            x  
-#>      0.9981       2.0017  
+#>      0.9984       2.0039  
 #> 
 #> 
 #> $time
 #>    user  system elapsed 
-#>   0.247   0.037   0.285
+#>   0.285   0.054   0.339
 ```
 
 Use `add_timer()` to wrap an existing function so its execution is timed
@@ -75,11 +77,11 @@ execution time are returned as a list.
 mean_timed <- add_timer(mean)
 mean_timed(rnorm(1e6))
 #> $result
-#> [1] -0.001177068
+#> [1] 0.0007365864
 #> 
 #> $time
 #>    user  system elapsed 
-#>   0.073   0.000   0.074
+#>   0.073   0.001   0.073
 
 lm_timed <- add_timer(lm)
 x <- (1:1e6) / 1e6
@@ -92,10 +94,10 @@ lm_timed(y ~ x)
 #> 
 #> Coefficients:
 #> (Intercept)            x  
-#>       1.003        1.998  
+#>       1.005        1.995  
 #> 
 #> 
 #> $time
 #>    user  system elapsed 
-#>   0.139   0.044   0.183
+#>   0.135   0.051   0.186
 ```

@@ -9,8 +9,8 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/mstrimas/timethis
 BugReports: https://github.com/mstrimas/timethis/issues
+License: GPL-3
 RoxygenNote: 6.1.0
-License: MIT + file LICENSE
 Suggests: 
     testthat,
     covr
