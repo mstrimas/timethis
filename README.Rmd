@@ -12,6 +12,7 @@ knitr::opts_chunk$set(
 ```
 # timethis
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
+[![CRAN status](https://www.r-pkg.org/badges/version/timethis)](https://cran.r-project.org/package=timethis)
 [![Travis build status](https://travis-ci.org/mstrimas/timethis.svg?branch=master)](https://travis-ci.org/mstrimas/timethis)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/mstrimas/timethis?branch=master&svg=true)](https://ci.appveyor.com/project/mstrimas/timethis)
 [![Coverage status](https://codecov.io/gh/mstrimas/timethis/branch/master/graph/badge.svg)](https://codecov.io/github/mstrimas/timethis?branch=master)
